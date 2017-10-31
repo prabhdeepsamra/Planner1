@@ -1,0 +1,1568 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<style>
+body{
+	background-color: #E5E9EC;
+}
+#divNAV {
+	margin-top: -140px;
+	width:200px;
+	height:50px;
+	float: left;
+	overflow: scroll;
+	border: 1px solid #aaaaaa;
+}
+
+p.s1{}
+p.s2{}
+p.s3{}
+p.s4{}
+p.s5{}
+p.s6{}
+p.s7{}
+p.s8{}
+
+
+
+p.course{
+	margin-top: 0px;
+	height:35px;
+	border-style: groove;
+	text-align: center;
+	vertical-align: text-middle;
+	padding-top: 15px;
+	background-color: #E5E9EC;
+}
+
+
+div.div1 {
+    width: 150px;
+    height: 56px;
+	
+    border: 1px solid #aaaaaa;
+}
+
+#divUCMReq {
+    width: 150px;
+    overflow-y:hidden;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#divSchoolReq {
+    width: 150px;
+     overflow-y:hidden;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#divMajorReq {
+    width: 150px;
+     overflow-y:hidden;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#divEnginReq {
+    width: 150px;
+     overflow-y:hidden;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#divCoreReq {
+    width: 150px;
+     overflow-y:hidden;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#divCoreChooseReq {
+    width: 150px;
+     overflow-y:hidden;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#divTechReq {
+    width: 150px;
+    overflow-y:hidden;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+TableStyle
+        {
+           position:absolute;
+           top:50%;
+           left:50%; 
+		   }
+
+
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+<script>
+
+$.fn.resetcolor = function(){
+   $(".s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8").css({"background-color": "#E5E9EC"});
+};
+
+$.fn.allgreen = function(){
+   $(".s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8").css({"background-color": "#D7F4D8"});
+};
+
+$.fn.sevengreen = function(){
+	$(".s2, .s3, .s4, .s5, .s6, .s7, .s8").css({"background-color": "#D7F4D8"});
+	$(".s1").css({"background-color": "#F4CFD5"});
+};
+
+$.fn.sixgreen = function(){
+	$(".s3, .s4, .s5, .s6, .s7, .s8").css({"background-color": "#D7F4D8"});
+	$(".s1, .s2").css({"background-color": "#F4CFD5"});
+};
+
+$.fn.fivegreen = function(){
+	$(".s4, .s5, .s6, .s7, .s8").css({"background-color": "#D7F4D8"});
+	$(".s1, .s2, .s3").css({"background-color": "#F4CFD5"});
+};
+
+$.fn.fourgreen = function(){
+	$(".s5, .s6, .s7, .s8").css({"background-color": "#D7F4D8"});
+	$(".s1, .s2, .s3, .s4").css({"background-color": "#F4CFD5"});
+};
+
+$.fn.threegreen = function(){
+	$(".s6, .s7, .s8").css({"background-color": "#D7F4D8"});
+	$(".s1, .s2, .s3, .s4, .s5").css({"background-color": "#F4CFD5"});
+};
+
+$.fn.twogreen = function(){
+	$(".s7, .s8").css({"background-color": "#D7F4D8"});
+	$(".s1, .s2, .s3, .s4, .s5, .s6").css({"background-color": "#F4CFD5"});
+};
+
+$.fn.onegreen = function(){
+	$(".s8").css({"background-color": "#D7F4D8"});
+	$(".s1, .s2, .s3, .s4, .s5, .s6, .s7").css({"background-color": "#F4CFD5"});
+};
+
+$.fn.nonegreen = function(){
+	$(".s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8").css({"background-color": "#F4CFD5"});
+};
+
+
+
+
+
+
+$(document).ready(function(){
+
+	$("#CORE001,#WRI010,#MATH021,#MATH022,#MATH023,#MATH024,#MATH032,#PHYS008,#PHYS009,#CSE020,#CSE021,#ScienceCourse,#ArtsHumanitiesGE,#SocialScienceGE,#ENGR097197,#UpperDivWriting,#ENGR045,#ENGR057,#ENGR065,#ENGR120,#ENGR130,#ENGR140,#ENGR151,#ENGR155,#ENGR160,#ENGR180,#CSE030,#CSE031,#ENGR191,#CSE100,#CSE111,#CSE115,#CSE120,#CSE140,#CSE150,#CSE160,#CSE106,#CSE107,#CSE126,#CSE135,#CSE165,#CSE170,#CSE171,#CSE173,#CSE175,#CSE176,#CSE177,#CSE178,#CSE179,#CSE180,#CSE185,#MATH131,#MATH141").mouseleave(function(){
+        $().resetcolor();
+	 });
+	 
+	 
+    $("#WRI010,#MATH021,#ScienceCourse,#ArtsHumanitiesGE,#SocialScienceGE,#ENGR097197,#UpperDivWriting,#CSE020,#ENGR155,#CSE106,#CSE126").mouseenter(function(){
+       $().allgreen();
+    });
+	
+	$("#CSE160").mouseenter(function(){
+	$(".s1, .s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+	$(".s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+	});
+	
+	$("#CORE001").mouseenter(function(){
+		$(".s5, .s6, .s7, .s8").css({"background-color": "#F4CFD5"});
+		$(".s1, .s2, .s3, .s4").css({"background-color": "#D7F4D8"});
+			});
+	
+	
+	$("#MATH022").mouseenter(function(){
+				switch($("#MATH021").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});
+		
+		
+	$("#MATH023").mouseenter(function(){
+				switch($("#MATH022").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});
+	
+	
+	$("#MATH024").mouseenter(function(){
+				switch($("#MATH022").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});
+	
+	
+	$("#MATH032").mouseenter(function(){
+				switch($("#MATH023").parent().attr("semester")){
+					case "1":
+						$().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});
+   
+   
+   $("#PHYS008").mouseenter(function(){
+				switch($("#MATH021").parent().attr("semester")){
+					case "1":
+						 $().allgreen();
+						break;	
+					case "2":
+						$().sevengreen();
+						break;	
+					case "3":
+						$().sixgreen();
+						break;					
+					case "4":
+						$().fivegreen();
+						break;				
+					case "5":
+						$().fourgreen();
+						break;				
+					case "6":
+						$().threegreen();
+						break;				
+					case "7":
+						$().twogreen();
+						break;
+					case "8":
+						$().onegreen();
+						break;
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+
+	$("#ENGR191").mouseenter(function(){
+		$(".s7, .s8").css({"background-color": "#D7F4D8"});
+		$(".s1, .s2, .s3, .s4, .s5, .s6").css({"background-color": "#F4CFD5"});
+			});
+
+
+	$("#CSE021").mouseenter(function(){
+				switch($("#CSE020").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});
+
+
+	$("#ENGR045").mouseenter(function(){
+				switch($("#PHYS008").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});
+
+			
+	$("#ENGR057").mouseenter(function(){
+				switch($("#PHYS008").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});		
+			
+ 
+	$("#ENGR140").mouseenter(function(){
+				switch($("#CSE021").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});		
+ 
+ 
+	$("#ENGR160").mouseenter(function(){
+				switch($("#MATH022").parent().attr("semester")){
+					case "1":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "2":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "3":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;					
+					case "4":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "5":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "6":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});rf
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+ 
+	$("#ENGR180").mouseenter(function(){
+				switch($("#MATH021").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+ 
+ 	$("#CSE030").mouseenter(function(){
+				switch($("#CSE021").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+ 
+ 	$("#CSE031").mouseenter(function(){
+				switch($("#CSE030").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+ 
+  	$("#CSE100").mouseenter(function(){
+				switch($("#CSE031").parent().attr("semester")){
+					case "1":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "2":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "3":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;					
+					case "4":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "5":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "6":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});rf
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+ 
+   	$("#CSE111").mouseenter(function(){
+				switch($("#CSE031").parent().attr("semester")){
+					case "1":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "2":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "3":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;					
+					case "4":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "5":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "6":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});rf
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+ 
+   	$("#CSE115").mouseenter(function(){
+				switch($("#MATH022").parent().attr("semester")){
+					case "1":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "2":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "3":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;					
+					case "4":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "5":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "6":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});rf
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+ 
+	$("#CSE140").mouseenter(function(){
+				switch($("#CSE031").parent().attr("semester")){
+					case "1":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "2":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "3":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;					
+					case "4":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "5":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "6":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});rf
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+ 
+	$("#CSE150").mouseenter(function(){
+				switch($("#CSE031").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}}); 
+ 
+ 
+	$("#CSE170").mouseenter(function(){
+				switch($("#CSE031").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}}); 
+ 
+ 
+	$("#CSE171").mouseenter(function(){
+				switch($("#CSE170").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}}); 
+ 
+ 
+ 	$("#CSE175").mouseenter(function(){
+				switch($("#CSE021").parent().attr("semester")){
+					case "1":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "2":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "3":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;					
+					case "4":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "5":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "6":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});rf
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+ 
+ 	$("#CSE177").mouseenter(function(){
+				switch($("#CSE111").parent().attr("semester")){
+					case "1":
+						$(".s2, .s4, .s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+						break;	
+					case "2":
+						$(".s4, .s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+						break;	
+					case "3":
+						$(".s4, .s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+						break;					
+					case "4":
+						$(".s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s4,.s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+						break;				
+					case "5":
+						$(".s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s4,.s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+						break;				
+					case "6":
+						$(".s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s4,.s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+					case "7":
+						$(".s8").css({"background-color": "#D7F4D8"});
+						$(".s6, .s4,.s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+					default:
+						$().nonegreen();
+						break;		
+			}}); 
+ 
+ 
+ 	$("#CSE178").mouseenter(function(){
+				switch($("#CSE150").parent().attr("semester")){
+					case "1":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "2":
+						$(".s3,.s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;	
+					case "3":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;					
+					case "4":
+						$(".s5,.s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "5":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});
+						break;				
+					case "6":
+						$(".s7").css({"background-color": "#D7F4D8"});
+						$(".s1, .s2, .s3, .s4, .s5, .s6, .s8").css({"background-color": "#F4CFD5"});rf
+					default:
+						$().nonegreen();
+						break;	
+			}});
+ 
+ 
+ 	$("#CSE180").mouseenter(function(){
+				switch($("#CSE031").parent().attr("semester")){
+					case "1":
+						$(".s2, .s4, .s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+						break;	
+					case "2":
+						$(".s4, .s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+						break;	
+					case "3":
+						$(".s4, .s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+						break;					
+					case "4":
+						$(".s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s4,.s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+						break;				
+					case "5":
+						$(".s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s4,.s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+						break;				
+					case "6":
+						$(".s6, .s8").css({"background-color": "#D7F4D8"});
+						$(".s4,.s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+					case "7":
+						$(".s8").css({"background-color": "#D7F4D8"});
+						$(".s6, .s4,.s2, .s1, .s3, .s5, .s7").css({"background-color": "#F4CFD5"});
+					default:
+						$().nonegreen();
+						break;		
+			}}); 
+ 
+ 
+  	$("#CSE185").mouseenter(function(){
+				switch($("#CSE031").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}}); 
+ 
+ 
+  	$("#MATH131").mouseenter(function(){
+				switch($("#MATH024").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}}); 
+ 
+ 
+  	$("#MATH141").mouseenter(function(){
+				switch($("#MATH131").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}}); 
+ 
+ /*
+   	$("#CSE120").mouseenter(function(){
+		
+		if ($("#CSE111").parent().attr("id")) != "divCoreChooseReq"){
+				switch($("#CSE111").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}}else if($("#CSE150").parent().attr("id")) != "divCoreChooseReq"){
+				switch($("#CSE150").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}}else if($("#CSE160").parent().attr("id")) != "divCoreChooseReq"){			
+				switch($("#CSE160").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}}else if($("#CSE170").parent().attr("id")) != "divTechReq"){			
+				switch($("#CSE170").parent().attr("semester")){
+					case "1":
+						 $().sevengreen();
+						break;	
+					case "2":
+						 $().sixgreen();
+						break;	
+					case "3":
+						$().fivegreen();
+						break;					
+					case "4":
+						$().fourgreen();
+						break;				
+					case "5":
+						$().threegreen();
+						break;				
+					case "6":
+						$().twogreen();
+						break;				
+					case "7":
+						$().onegreen();
+						break;		
+					default:
+						$().nonegreen();
+						break;	
+			}}});
+ */
+ 
+ 
+ 
+/*
+	$("#ENGR120").mouseenter(function(){
+				switch($("#MATH024").parent().attr("semester")){
+					case "3":
+						switch($("#ENGR057").parent().attr("semester")){
+							case "2":
+								$().fivegreen();
+								break;	
+							case "3":
+								$().fivegreen();
+								break;	
+							case "4":
+								$().fourgreen();
+								break;	
+							case "5":
+								$().threegreen();
+								break;	
+							case "6":
+								$().twogreen();
+								break;	
+							case "7":
+								$().onegreen();
+								break;		
+							default"
+								$().nonegreen();
+								break;	
+						}
+							
+					case "4":
+						switch($("#ENGR057").parent().attr("semester")){
+							case "2":
+								$().fourgreen();
+								break;	
+							case "3":
+								$().fourgreen();
+								break;	
+							case "4":
+								$().fourgreen();
+								break;	
+							case "5":
+								$().threegreen();
+								break;	
+							case "6":
+								$().twogreen();
+								break;	
+							case "7":
+								$().onegreen();
+								break;		
+							default"
+								$().nonegreen();
+								break;	
+						}
+										
+					case "5":
+						switch($("#ENGR057").parent().attr("semester")){
+							case "2":
+								$().threegreen();
+								break;	
+							case "3":
+								$().threegreen();
+								break;	
+							case "4":
+								$().threegreen();
+								break;	
+							case "5":
+								$().threegreen();
+								break;	
+							case "6":
+								$().twogreen();
+								break;	
+							case "7":
+								$().onegreen();
+								break;		
+							default"
+								$().nonegreen();
+								break;	
+						}
+					
+					case "6":
+						switch($("#ENGR057").parent().attr("semester")){
+							case "2":
+								$().twogreen();
+								break;	
+							case "3":
+								$().twogreen();
+								break;	
+							case "4":
+								$().twogreen();
+								break;	
+							case "5":
+								$().twogreen();
+								break;	
+							case "6":
+								$().twogreen();
+								break;	
+							case "7":
+								$().onegreen();
+								break;		
+							default"
+								$().nonegreen();
+								break;	
+						}
+			
+					case "7":
+						switch($("#ENGR057").parent().attr("semester")){
+							case "2":
+								$().onegreen();
+								break;	
+							case "3":
+								$().onegreen();
+								break;	
+							case "4":
+								$().onegreen();
+								break;	
+							case "5":
+								$().onegreen();
+								break;	
+							case "6":
+								$$().onegreen();
+								break;	
+							case "7":
+								$().onegreen();
+								break;		
+							default"
+								$().nonegreen();
+								break;	
+						}
+		
+					default:
+						$().nonegreen();
+						break;	
+			}});
+*/		
+			
+			
+			
+			
+
+ 
+/*
+	$("#PHYS009").mouseenter(function(){
+		switch($("#MATH022").parent().attr("semester");){
+					case "2":
+							switch($("#MATH021").parent().attr("semester");){
+										case "1":	
+												switch($("#PHYS008").parent().attr("semester");){
+																		case "1":
+																			$().sevengreen();
+																			break;
+																		case "2":
+																			$().sixgreen();
+																			break;
+																		case "3":
+																			$().fivegreen();
+																			break;
+																		case "4":
+																			$().fourgreen();
+																			break;	
+																		case "5":
+																			$().threegreen();
+																			break;
+																		case "6":
+																			$().twogreen();
+																			break;
+																		case "7":
+																			$().onegreen();
+																			break;
+																		default:
+																			$().nonegreen();
+																			break;	
+												}						
+										default:
+												$(".s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8").css({"background-color": "#F4CFD5"});
+												break;									
+												
+							}					
+					case "3":
+							switch($("#MATH021").parent().attr("semester");){
+										case "2":					
+												switch($("#PHYS008").parent().attr("semester");){
+																		case "1":
+																			$().sixgreen();
+																			break;
+																		case "2":
+																			$().sixgreen();
+																			break;
+																		case "3":
+																			$().fivegreen();
+																			break;
+																		case "4":
+																			$().fourgreen();
+																			break;	
+																		case "5":
+																			$().threegreen();
+																			break;
+																		case "6":
+																			$().twogreen();
+																			break;
+																		case "7":
+																			$().onegreen();
+																			break;
+																		default:
+																			$().nonegreen();
+																			break;	
+												}						
+										default:
+												$(".s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8").css({"background-color": "#F4CFD5"});
+												break;									
+							}
+												
+								
+												
+												
+												
+												
+												
+
+
+
+
+
+
+}
+															
+});									
+												
+*/											
+												
+
+});
+
+ 
+
+
+</script>
+
+
+
+
+
+
+
+<script>
+
+window.onload = function setResolution() {
+    document.getElementById('divNAV').style.height = screen.height *.88 + "px";
+}
+
+function allowDrop(ev) {	
+	ev.preventDefault();
+}
+
+function drag(ev) {
+   ev.dataTransfer.setData("Text", ev.target.id);
+}
+
+function drop(ev) {
+    var data = ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+	ev.preventDefault();		
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+<div id="divNAV">
+
+
+	<div id="divUCMReq" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<p style = "font-size: 12px; padding-bottom: 15px">UC Merced Requirements</p>
+		<p class="course" id="CORE001" draggable="true" ondragstart="drag(event)">CORE 001</p>
+		<p class="course" id="WRI010" draggable="true" ondragstart="drag(event)" >WRI 010</p>
+	</div>
+
+	
+	<div id="divSchoolReq" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<p  style = "font-size: 12px; padding-bottom: 15px">School Requirements</p>
+		<p class = "course" id="MATH021" draggable="true" ondragstart="drag(event)" >MATH 021</p>
+		<p class="course" id="MATH022" draggable="true" ondragstart="drag(event)" >MATH 022</p>
+		<p class="course" id="MATH023" draggable="true" ondragstart="drag(event)" >MATH 023</p>
+		<p class="course" id="MATH024" draggable="true" ondragstart="drag(event)" >MATH 024</p>
+		<p class="course" id="MATH032" draggable="true" ondragstart="drag(event)" >MATH 032</p>
+		<p class="course" id="PHYS008" draggable="true" ondragstart="drag(event)" >PHYS 008</p>
+		<p class="course" id="PHYS009" draggable="true" ondragstart="drag(event)" >PHYS 009</p>
+		<p class="course" id="CSE020" draggable="true" ondragstart="drag(event)" >CSE 020</p>
+		<p class="course" id="CSE021" draggable="true" ondragstart="drag(event)" >CSE 021</p>
+		<p class="course" id="ScienceCourse" draggable="true" ondragstart="drag(event)" >Science Course</p>
+		<p class="course" id="ArtsHumanitiesGE" draggable="true" ondragstart="drag(event)" >Arts/Humanities GE</p>
+		<p class="course" id="SocialScienceGE" draggable="true" ondragstart="drag(event)" >Social Science GE</p>
+	</div>
+
+	
+	<div id="divMajorReq" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<p style = "font-size: 12px; padding-bottom: 15px">Major/Core Requirements</p>
+		<p class="course" id="ENGR097197" draggable="true" ondragstart="drag(event)" >ENGR 097/197</p>
+		<p class="course" id="UpperDivWriting" draggable="true" ondragstart="drag(event)" >Upper-Div Writing</p>
+	</div>
+
+		
+	
+	<div id="divEnginReq" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<p style = "font-size: 12px">Engineering Fundamentals</p>
+		<p style = "font-size: 12px">Choose 8 units from the following</p>
+		<p class="course" id="ENGR045" draggable="true" ondragstart="drag(event)" style = "border-style: groove; text-align: center; font-size: 11px">ENGR 045(CHEM 002 REQ)</p>
+		<p class="course" id="ENGR057" draggable="true" ondragstart="drag(event)" >ENGR 057</p>
+		<p class="course" id="ENGR065" draggable="true" ondragstart="drag(event)" >ENGR 065</p>
+		<p class="course" id="ENGR120" draggable="true" ondragstart="drag(event)" >ENGR 120</p>
+		<p class="course" id="ENGR130" draggable="true" ondragstart="drag(event)" >ENGR 130</p>	
+		<p class="course" id="ENGR140" draggable="true" ondragstart="drag(event)" >ENGR 140</p>
+		<p class="course" id="ENGR151" draggable="true" ondragstart="drag(event)" >ENGR 151</p>
+		<p class="course" id="ENGR155" draggable="true" ondragstart="drag(event)" >ENGR 155</p>
+		<p class="course" id="ENGR160" draggable="true" ondragstart="drag(event)" >ENGR 160</p>
+		<p class="course" id="ENGR180" draggable="true" ondragstart="drag(event)" >ENGR 180</p>
+	</div>
+
+	
+	<div id="divCoreReq" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<p style = "font-size: 12px; padding-bottom: 15px">CSE Core</p>
+		<p class="course" id="CSE030" draggable="true" ondragstart="drag(event)" >CSE 030</p>
+		<p class="course" id="CSE031" draggable="true" ondragstart="drag(event)" >CSE 031</p>
+		<p class="course" id="ENGR191" draggable="true" ondragstart="drag(event)" >ENGR 191</p>
+	</div>
+
+	
+	<div id="divCoreChooseReq" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<p style = "font-size: 12px; padding-bottom: 15px">Choose 4 courses from the following</p>
+		<p class="course" id="CSE100" draggable="true" ondragstart="drag(event)" >CSE 100</p>
+		<p class="course" id="CSE111" draggable="true" ondragstart="drag(event)" >CSE 111</p>
+		<p class="course" id="CSE115" draggable="true" ondragstart="drag(event)" >CSE 115</p>
+		<p class="course" id="CSE120" draggable="true" ondragstart="drag(event)" >CSE 120</p>
+		<p class="course" id="CSE140" draggable="true" ondragstart="drag(event)" >CSE 140</p>
+		<p class="course" id="CSE150" draggable="true" ondragstart="drag(event)" >CSE 150</p>
+		<p class="course" id="CSE160" draggable="true" ondragstart="drag(event)" >CSE 160</p>
+	</div>
+
+	
+	<div id="divTechReq" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<p style = "font-size: 12px">Technical Elective Courses</p>
+		<p style = "font-size: 12px; padding-bottom: 15px">Choose 24 units from the following</p>
+		<p class="course" id="CSE106" draggable="true" ondragstart="drag(event)" >CSE 106</p>
+		<p class="course" id="CSE107" draggable="true" ondragstart="drag(event)" >CSE 107</p>
+		<p class="course" id="CSE126" draggable="true" ondragstart="drag(event)" >CSE 126</p>
+		<p class="course" id="CSE135" draggable="true" ondragstart="drag(event)" >CSE 135</p>			
+		<p class="course" id="CSE165" draggable="true" ondragstart="drag(event)" >CSE 165</p>
+		<p class="course" id="CSE170" draggable="true" ondragstart="drag(event)" >CSE 170</p>
+		<p class="course" id="CSE171" draggable="true" ondragstart="drag(event)" >CSE 171</p>
+		<p class="course" id="CSE173" draggable="true" ondragstart="drag(event)" >CSE 173</p>
+		<p class="course" id="CSE175" draggable="true" ondragstart="drag(event)" >CSE 175</p>
+		<p class="course" id="CSE176" draggable="true" ondragstart="drag(event)" >CSE 176</p>
+		<p class="course" id="CSE177" draggable="true" ondragstart="drag(event)" >CSE 177</p>
+		<p class="course" id="CSE178" draggable="true" ondragstart="drag(event)" >CSE 178</p>
+		<p class="course" id="CSE179" draggable="true" ondragstart="drag(event)" >CSE 179</p>
+		<p class="course" id="CSE180" draggable="true" ondragstart="drag(event)" >CSE 180</p>
+		<p class="course" id="CSE185" draggable="true" ondragstart="drag(event)" >CSE 185</p>
+		<p class="course" id="MATH131" draggable="true" ondragstart="drag(event)" >MATH 131</p>
+		<p class="course" id="MATH141" draggable="true" ondragstart="drag(event)" >MATH 141</p>
+	</div>
+	
+	
+</div>
+
+
+
+<table align = "center" style="margin-top:150px">
+
+	<tr id = "Semester 1">
+		<td> <div>Semester 1</div><td>
+		<td><div id="s1c1" class="div1 s1" semester="1" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s1c2" class="div1 s1" semester="1"  ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s1c3" class="div1 s1" semester="1" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s1c4" class="div1 s1" semester="1" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+			
+	</tr>
+
+	
+	<tr id = "Semester 2">	
+		<td> <div style = "margin-bottom: 30px;">Semester 2</div><td>
+		<td><div id="s2c1" class="div1 s2" semester="2" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s2c2" class="div1 s2" semester="2" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s2c3" class="div1 s2" semester="2" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s2c4" class="div1 s2" semester="2" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+	</tr>
+	
+	
+	<tr id = "Semester 3">
+		<td> <div style = "margin-bottom: 30px;">Semester 3</div><td>
+		<td><div id="s3c1" class="div1 s3" semester="3" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s3c2" class="div1 s3" semester="3" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s3c3" class="div1 s3" semester="3" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s3c4" class="div1 s3" semester="3" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+	</tr>
+	
+	
+	<tr id = "Semester 4">
+		<td> <div style = "margin-bottom: 30px;">Semester 4</div><td>
+		<td><div id="s4c1" class="div1 s4" semester="4" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s4c2" class="div1 s4" semester="4" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s4c3" class="div1 s4" semester="4" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s4c4" class="div1 s4" semester="4" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+	</tr>
+	
+	
+	<tr id = "Semester 5">
+		<td> <div style = "margin-bottom: 30px;">Semester 5</div><td>
+		<td><div id="s5c1" class="div1 s5" semester="5" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s5c2" class="div1 s5" semester="5" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s5c3" class="div1 s5" semester="5" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s5c4" class="div1 s5" semester="5" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+	</tr>
+	
+	
+	<tr id = "Semester 6">
+		<td> <div style = "margin-bottom: 30px;">Semester 6</div><td>
+		<td><div id="s6c1" class="div1 s6" semester="6" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s6c2" class="div1 s6" semester="6" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s6c3" class="div1 s6" semester="6" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s6c4" class="div1 s6" semester="6" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+	</tr>
+	
+	
+	<tr id = "Semester 7">		
+		<td> <div style = "margin-bottom: 30px;">Semester 7</div><td>
+		<td><div id="s7c1" class="div1 s7" semester="7" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s7c2" class="div1 s7" semester="7" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s7c3" class="div1 s7" semester="7" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s7c4" class="div1 s7" semester="7" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+	</tr>
+	
+	
+	<tr id = "Semester 8">		
+		<td> <div style = "margin-bottom: 30px;">Semester 8</div><td>
+		<td><div id="s8c1" class="div1 s8" semester="8" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s8c2" class="div1 s8" semester="8" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s8c3" class="div1 s8" semester="8" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+		<td><div id="s8c4" class="div1 s8" semester="8" ondrop="drop(event)" ondragover="allowDrop(event)"></div><td>
+	</tr>
+	
+	
+<table>
+</body>
+</html>
